@@ -9,11 +9,12 @@ use Slim\Psr7\Factory\StreamFactory;
 
 class HomeController
 {
+    /** @var ContainerInterface */
     private $container;
 
     public function __construct(ContainerInterface $container)
     {
-         $this->container = $container;
+        $this->container = $container;
     }
 
     public function index(
