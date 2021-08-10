@@ -15,7 +15,7 @@ final class HomeActionTest extends TestCase
     {
         $request = $this->createRequest('GET', '/');
 
-        $response = $this->app->handle($request);
+        $response = $this->app->handle($request);@
 
         $this->assertSame(StatusCodeInterface::STATUS_OK, $response->getStatusCode());
     }
