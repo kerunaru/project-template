@@ -2,24 +2,26 @@
 
 namespace App\Test\Traits;
 
+use DI\Container;
 use InvalidArgumentException;
 use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Http\Message\ServerRequestInterface;
+use Slim\App;
 use Slim\Psr7\Factory\ServerRequestFactory;
 
 trait AppTestTrait
 {
-    /** @var DI\Container */
-    protected $container;
+    protected Container $container;
 
-    /**  @var Slim\App */
-    protected $app;
+    protected App $app;
 
     protected function setUp(): void
     {
         require __DIR__ . '/../../public/index.php';
 
+        /** @var $container */
         $this->container = $container;
+        /** @var $app */
         $this->app = $app;
 
         // Suprime la salida por pantalla
